@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050911">
+<title>GA TOP 100 | Youth Track &amp; Field Rankings Ages 7–18</title>
+<meta name="description" content="GA Affiliated youth track and field performances ages 7–18 drawn from a curated selection of published MileSplit-hosted meet results; not an exhaustive nationwide or Florida Top 100.">
+<meta property="og:title" content="GA TOP 100 | GA Affiliated Rankings">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="rankings.css?v=2">
+<link rel="preload" href="assets/ga-loading-screen.png" as="image" fetchpriority="high">
+<script>(function(){try{if(!sessionStorage.getItem('gaIntroSeen')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ga-intro-pending')}catch(e){document.documentElement.classList.add('ga-intro-pending')}})();</script>
+<link rel="stylesheet" href="ga-loader.css?v=4">
+</head>
+<body>
+<div class="ga-intro-screen" id="ga-intro" role="status" aria-label="GA Affiliated loading screen" aria-live="off"><div class="ga-intro-composition" aria-hidden="true"><img class="ga-intro-art" src="assets/ga-loading-screen.png" alt="" width="941" height="1672" fetchpriority="high" decoding="sync"><div class="ga-intro-meter"><span id="ga-intro-meter-fill" class="ga-intro-meter-fill"></span></div></div><button type="button" class="ga-intro-skip" id="ga-intro-skip">SKIP INTRO ↗</button></div>
+<a href="#rankings" class="rank-skip">Skip to rankings</a>
+<header class="rank-header">
+ <a class="rank-brand" href="index.html" aria-label="GA Affiliated homepage"><span class="rank-logo">GA</span><span class="rank-brand-copy">AFFILIATED<small>THE GA ATHLETICS INDEX</small></span></a>
+ <nav class="rank-nav" aria-label="Main navigation"><a href="index.html">HOME</a><a href="go-hard-or-go-home.html">TRACK MEET</a><a href="ambassadors.html">AMBASSADORS</a><a href="track-top-100.html" class="rank-current" aria-current="page">TOP 100</a></nav>
+ <a class="rank-contact" href="mailto:ga.affiliated@gmail.com?subject=GA%20Top%20100%20Results%20Submission">SUBMIT RESULTS ↗</a>
+</header>
+<main id="rankings">
+<section class="rank-hero">
+  <div class="rank-hero-glow" aria-hidden="true"></div>
+  <div class="rank-max rank-hero-content"><div class="rank-kicker"><span class="rank-indicator"></span> YOUTH TRACK &amp; FIELD / PERFORMANCE INDEX</div>
+  <div class="rank-title-wrap"><div><h1>THE <em>TOP</em><span>100</span></h1><p class="rank-tagline">EVERY AGE. EVERY EVENT.<br>LET THE RESULTS SPEAK.</p></div><div class="rank-halo" aria-hidden="true"><b>GA</b><span>TRACK &amp; FIELD</span></div></div>
+  <p class="rank-intro">Browse <strong>real published meet performances</strong> from a curated selection of <a href="https://fl.milesplit.com/" target="_blank" rel="noopener noreferrer">MileSplit-hosted results</a>. Select any age <strong>7–18</strong> and an event to see up to 100 athletes <strong>among our included results</strong>, with links to the original meet report.</p>
+  <div class="rank-stats"><div><strong>12</strong><span>INDIVIDUAL AGES</span></div><div><strong>100</strong><span>MAX PER EVENT</span></div><div><strong id="rank-loaded-count">0</strong><span>QUALIFYING MARKS LOADED</span></div><div><strong>ALL</strong><span>EVENT CATEGORIES</span></div></div>
+ </div>
+</section>
+<div class="rank-max ga-mile-source-note" role="note"><strong>DATA COVERAGE:</strong> 2026 Florida meet-results selection, not an official Top 100. Rankings reflect <strong>only the performances loaded here</strong>. Original <a target="_blank" rel="noopener noreferrer" href="https://fl.milesplit.com/">MileSplit</a> results are linked per athlete. <span>Not affiliated with MileSplit or FloSports.</span></div>
+
+<section class="rank-max rank-controls-section" aria-labelledby="rank-filter-heading">
+  <div class="rank-section-top"><div><span class="rank-label">01 / FIND YOUR EVENT</span><h2 id="rank-filter-heading">EXPLORE THE <em>LEADERBOARD.</em></h2></div><span class="rank-mini-flag">2026 Florida meets · Boys &amp; Girls</span></div>
+  <div class="rank-filter-panel">
+    <div class="rank-control-top"><span class="rank-step">01</span><div><strong>COMPETITION AGE</strong><p>Choose an age shown in the published meet result, 7 through 18.</p></div></div>
+    <div id="rank-age-options" class="rank-age-options" role="group" aria-label="Select competition age"></div>
+    <div class="rank-filter-grid">
+      <div class="rank-control"><label for="rank-gender">DIVISION</label><select id="rank-gender"><option value="Girls">GIRLS</option><option value="Boys">BOYS</option></select></div>
+      <div class="rank-control"><label for="rank-category">EVENT CATEGORY</label><select id="rank-category"></select></div>
+      <div class="rank-control"><label for="rank-event">EVENT</label><select id="rank-event"></select></div>
+      <div class="rank-control"><label for="rank-season">SEASON</label><select id="rank-season"><option value="2026">2026</option><option value="2027">2027</option><option value="2025">2025</option><option value="2024">2024</option><option value="all">ALL UPLOADED SEASONS</option></select></div>
+      <div class="rank-control"><label for="rank-region">REGION</label><select id="rank-region"><option value="all">ALL INCLUDED MEETS</option><option value="FL">MEETS HELD IN FLORIDA</option></select></div>
+      <div class="rank-control rank-search-control"><label for="rank-search">FIND ATHLETE / TEAM</label><input id="rank-search" type="search" placeholder="Search name or team…" autocomplete="off"></div>
+    </div>
+    <div class="rank-control-actions"><button type="button" id="rank-reset" class="rank-reset">RESET FILTERS ↺</button><span id="rank-selection-label" aria-live="polite"></span></div>
+  </div>
+</section>
+<section class="rank-max rank-board" aria-labelledby="rank-board-heading">
+  <div class="rank-board-top"><div><span class="rank-label">02 / TOP PERFORMERS</span><h2 id="rank-board-heading">THE <em>LEADERBOARD.</em></h2><p id="rank-board-context">GIRLS · AGE 12 · 100M · 2026</p></div><div class="rank-board-actions"><span id="rank-data-status" class="rank-status" role="status">Loading published meet results…</span><button type="button" id="rank-print" class="rank-print">PRINT ↗</button></div></div>
+  <div class="rank-board-shell"><div class="rank-table-scroll"><table class="rank-table"><caption class="rank-sr">Top 100 results for selected age, gender, event, and season</caption><thead><tr><th scope="col">RANK</th><th scope="col">ATHLETE / TEAM</th><th scope="col">PERFORMANCE</th><th scope="col">MEET / DATE</th><th scope="col">OFFICIAL SOURCE</th></tr></thead><tbody id="rank-table-body"></tbody></table></div>
+  <div id="rank-empty" class="rank-empty" hidden><span class="rank-empty-icon" aria-hidden="true">—</span><h3 id="rank-empty-title">AWAITING VERIFIED RESULTS.</h3><p id="rank-empty-description">No published results have been loaded for this ranking. Add meet results to the supplied CSV file to activate the Top 100 tables.</p><a href="mailto:ga.affiliated@gmail.com?subject=GA%20Top%20100%20Results%20Submission" class="rank-empty-link">SUBMIT AN OFFICIAL RESULT ↗</a></div>
+  <div class="rank-board-foot"><span id="rank-count-display">0 RESULTS</span><button type="button" id="rank-load-more" class="rank-more" hidden>SHOW MORE RESULTS ↓</button><span>GA-CURATED RESULTS · NOT OFFICIAL STATEWIDE/NATIONAL RANK</span></div></div>
+</section>
+<section class="rank-max rank-notes" aria-labelledby="rank-about-heading"><div><span class="rank-label">03 / HOW RANKINGS WORK</span><h2 id="rank-about-heading">PERFORMANCES.<br><em>WITH RECEIPTS.</em></h2></div><div class="rank-note-grid"><article><span>01</span><h3>OFFICIAL MEET SOURCES</h3><p>Each entry comes from a public MileSplit-hosted meet results page. Click VIEW RESULT to check the original record and meet details.</p></article><article><span>02</span><h3>FAIR COMPARISONS</h3><p>Only individual ages explicitly shown in the source are included. Where wind is given, sprint/jump marks over +2.0 m/s are excluded. This list is not a full age-category ranking.</p></article><article><span>03</span><h3>DATA COVERAGE</h3><p>Initial results are a selective <strong>2026 Florida meet sample</strong>, not a comprehensive Florida, U.S. or world Top 100. "Florida" describes meet location, not athlete residency. Meet dates for multi-day events reflect the last event day.</p></article></div></section>
+<section class="rank-max rank-cta"><div><span class="rank-label">BE PART OF THE DATABASE</span><h2>GOT AN <em>OFFICIAL RESULT?</em></h2><p>Send the meet name, athlete, event, age, mark, meet date and official results URL to GA Affiliated for review. Data shown here is not affiliated with, endorsed by or continuously synchronized with MileSplit.</p></div><a class="rank-cta-button" href="mailto:ga.affiliated@gmail.com?subject=GA%20Top%20100%20Result%20Submission">SUBMIT A PERFORMANCE ↗</a></section>
+</main>
+<footer class="rank-footer"><a href="index.html" class="rank-footer-brand">GA <b>AFFILIATED</b></a><span>© 2026 GA AFFILIATED · CURATED TRACK &amp; FIELD RESULTS</span><nav aria-label="Footer navigation"><a href="index.html">HOME</a><a href="go-hard-or-go-home.html">TRACK MEET</a><a href="ambassadors.html">AMBASSADORS</a></nav></footer>
+<script src="rankings.js?v=2" defer></script><script src="ga-loader.js?v=4" defer></script>
+</body></html>
