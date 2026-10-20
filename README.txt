@@ -34,3 +34,11 @@ GA NEON HEADER UPDATE — OCTOBER 19, 2026
 - The image appears immediately below the white navigation header, above the existing Emeri Cotton hero; all existing athlete photos and sections remain unchanged.
 - Responsive CSS fills the banner on mobile and keeps the complete image visible on wide screens.
 - To update an existing copy of this exact redesigned site, upload only index.html, luxury.css, and assets/ga-neon-header.jpg in their existing paths.
+
+GA Women’s Collection update (October 19, 2026)
+- New Women's Performance Onyx (black) and Cocoa (brown) with supplied original images.
+- Existing pink/purple Women's Set and all Men's sets remain available.
+- $80 prices follow previous GA apparel-set listings and should be confirmed by GA.
+- Matching duffel bags are pictured but are NOT guaranteed to be included.
+- Inquiry bag and email checkout remain unchanged; no Stripe integration has been added.
+- Women's shop: index.html#women-shop.

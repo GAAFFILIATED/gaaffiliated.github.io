@@ -50,8 +50,11 @@
     ['Men’s Black Sweatsuit Set','#shop','men black sweatsuit apparel'],
     ['Men’s Red Sweatsuit Set','#shop','men red sweatsuit apparel'],
     ['Men’s Green Sweatsuit Set','#shop','men green sweatsuit apparel'],
-    ['Women’s Pink / Purple Sweatsuit Set','#shop','women pink purple sweatsuit apparel'],
+    ['Women’s Onyx Performance Set','#women-shop','women black black leggings jacket womens activewear performance'],
+    ['Women’s Cocoa Performance Set','#women-shop','women brown chocolate brown leggings jacket womens activewear performance'],
+    ['Women’s Pink / Purple Sweatsuit Set','#women-shop','women pink purple sweatsuit apparel'],
     ['GA Ambassadors','ambassadors.html','athlete team ambassadors roster'],
+    ['GO HARD OR GO HOME Track Meet','go-hard-or-go-home.html','2027 April 24 Lake Brantley track meet photos gallery'],
     ['Contact GA','#contact','contact custom quote email']
   ];
   function searchUI(q) {

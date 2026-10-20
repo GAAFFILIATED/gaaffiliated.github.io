@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#090912"><title>GA Store Administration</title><link rel="stylesheet" href="shop.css"><link rel="stylesheet" href="admin.css"><link rel="icon" type="image/png" href="assets/favicon-ga.png"></head>
+<body><header class="site-header"><a class="wordmark" href="index.html"><span>GA</span> / STORE ADMIN</a><nav><a href="shop.html">View store</a><a href="index.html">Home</a></nav><button id="logout" class="outline-button" type="button" hidden>Sign out</button></header>
+<main class="admin-main"><div class="eyebrow">AUTHORIZED STAFF ONLY</div><h1>STORE CONTROL <span>PANEL.</span></h1>
+<p id="app-status" class="admin-msg" role="status" aria-live="polite">Setting up your secure login…</p>
+<section class="admin-panel" id="login-panel"><h2>Administrator sign in</h2><p>Sign in using the Firebase account that was granted the GA store admin role.</p><form id="login-form"><label>Email<input id="email" type="email" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button type="submit" class="action">SECURE SIGN IN ↗</button></form><p class="note">This is not a customer account page. Only approved GA staff can enter.</p></section>
+<div id="admin-content" hidden>
+  <div class="summary-line"><span id="order-count">0 orders loaded</span><button type="button" class="outline-button" id="refresh-orders">↻ Refresh orders</button></div>
+  <section class="admin-panel"><div class="admin-heading"><h2>Recent orders</h2><p>Most recent 100. Payments are confirmed by Stripe webhooks, not browser redirects.</p></div><div id="orders" class="admin-orders"></div></section>
+  <section class="admin-panel"><div class="admin-heading"><h2>Product catalog</h2><p>Add or update merchandise here. Product prices are stored on the backend and verified at checkout.</p></div>
+    <div class="summary-line"><button id="new-product" type="button" class="outline-button">+ New product</button><button id="refresh-products" type="button" class="outline-button">↻ Refresh products</button></div>
+    <div id="existing-products" class="product-admin-list"></div>
+    <form id="product-form" class="product-form">
+      <label>Product ID (letters/numbers/dashes; permanent)<input id="product-id" required placeholder="ga-womens-tracksuit" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,79}"></label>
+      <label>Product name<input id="product-name" required placeholder="GA Women's Tracksuit"></label>
+      <label>Category<input id="product-category" placeholder="Women's Apparel" value="Apparel"></label>
+      <label>Image URL or existing assets path<input id="product-image" placeholder="assets/products/womens-performance-black.jpg"></label>
+      <label class="full">Description<textarea id="product-description" rows="2"></textarea></label>
+      <label class="full">Variants — one per line: <code>id | label | price in dollars | optional SKU</code><textarea id="product-variants" rows="5" placeholder="S | Small | 80.00 | GA-WT-S&#10;M | Medium | 80.00 | GA-WT-M&#10;L | Large | 80.00 | GA-WT-L" required></textarea></label>
+      <label class="check-label"><input id="product-active" type="checkbox" checked> Published in public store</label>
+      <button class="action" type="submit">SAVE PRODUCT ↗</button>
+      <p class="note full">Changes to products don't change existing paid orders. Prices must be verified before publishing.</p>
+    </form>
+  </section>
+</div></main>
+<footer><span>GA AFFILIATED / SECURE ADMIN</span><a href="mailto:ga.affiliated@gmail.com">SUPPORT EMAIL</a></footer>
+<script src="shop-config.js"></script><script type="module" src="admin-orders.js"></script></body></html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090912">
+  <meta name="description" content="Shop GA Affiliated athletic apparel and performance wear. Secure checkout powered by Stripe.">
+  <title>Shop Apparel | GA Affiliated</title>
+  <link rel="stylesheet" href="shop.css">
+<link rel="icon" type="image/png" href="assets/favicon-ga.png"></head>
+<body>
+  <a class="skip" href="#products">Skip to products</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="GA Affiliated home"><span>GA</span> / AFFILIATED</a>
+    <nav aria-label="Primary navigation"><a href="index.html">Home</a><a href="index.html#collections">Uniforms</a><a href="ambassadors.html">Ambassadors</a><a href="world-top-100.html">World Top 100</a></nav>
+    <a class="bag" href="#cart">BAG <span id="bag-count">0</span></a>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">GA AFFILIATED / PERFORMANCE APPAREL</div>
+    <h1>MADE TO <em>STAND APART.</em></h1>
+    <p>Built for athletes. Designed to move. Choose your fit, add your gear to the bag, and pay through secure Stripe Checkout.</p>
+    <a href="#products" class="action">SHOP COLLECTION <span aria-hidden="true">↘</span></a>
+  </section>
+  <main class="layout" id="products">
+    <section class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-top"><div><div class="eyebrow">THE COLLECTION</div><h2 id="catalog-title">APPAREL <span>SHOP</span></h2></div><p id="product-count">Products load from our secure store catalog.</p></div>
+      <div class="filters"><label class="sr-only" for="search">Search products</label><input id="search" type="search" placeholder="Search GA apparel…" autocomplete="off"><label class="sr-only" for="category">Category</label><select id="category"><option value="">All categories</option></select></div>
+      <p id="catalog-status" role="status" aria-live="polite">Loading store…</p>
+      <div id="products-grid" class="product-grid" aria-live="polite"></div>
+    </section>
+    <aside class="cart" id="cart" aria-labelledby="bag-title">
+      <div class="cart-heading"><div class="eyebrow">YOUR ORDER</div><h2 id="bag-title">SHOPPING BAG</h2><span class="note">Secure payment at checkout</span></div>
+      <div id="cart-items" class="cart-items"><p class="muted">Your bag is empty.</p></div>
+      <div class="cart-footer"><div class="total-row"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div>
+      <p class="note">Shipping and applicable taxes are calculated in Stripe Checkout. US shipping only until additional destinations are configured.</p>
+      <button id="checkout-button" class="action checkout-button" type="button" disabled>SECURE CHECKOUT ↗</button>
+      <p class="status" role="status" aria-live="polite" id="checkout-status"></p>
+      <div class="trust"><span>✓ Secure Stripe checkout</span><span>✓ Shipping address collected</span><span>✓ Email receipt</span></div></div>
+    </aside>
+  </main>
+  <section class="custom-cta"><div class="eyebrow">CUSTOM TEAM ORDERS</div><h2>NEED UNIFORMS FOR YOUR TEAM?</h2><p>Football, basketball, and track-and-field uniform designs require an approved quote before payment.</p><a href="mailto:ga.affiliated@gmail.com?subject=GA%20Custom%20Team%20Uniform%20Quote" class="action secondary">REQUEST A TEAM QUOTE ↗</a></section>
+  <footer><span>© GA AFFILIATED</span><a href="mailto:ga.affiliated@gmail.com">ga.affiliated@gmail.com</a><a href="index.html">BACK TO HOME ↗</a></footer>
+  <script src="shop-config.js"></script><script src="shop.js" defer></script>
+</body>
+</html>

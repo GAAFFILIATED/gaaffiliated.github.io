@@ -1,0 +1,20 @@
+GA AFFILIATED — WORLD TOP 100 UPDATE FOR GITHUB PAGES
+=====================================================
+
+GOAL: New World Top 100 rankings page (2026 + All-Time) with ages 7–18, girls/boys, 83 event options, country and source-verified mark filtering. The GA loader and original Florida CSV remain intact.
+
+1. Download and unzip GA_World_Top_100_GitHub_Update.zip.
+2. On GitHub open GAAFFILIATED / gaaffiliated.github.io / Code / main.
+3. Choose Add file -> Upload files at the ROOT (same level as index.html).
+4. Select the FILES INSIDE the extracted folder, not the ZIP or outer folder.
+5. Confirm that index.html and track-top-100.html are root-level files, not a new nested folder.
+6. Commit changes to main. Wait for the latest GitHub Pages deploy to finish.
+7. Visit https://www.gaaffiliated.com/track-top-100.html in a private window.
+
+NO DOMAIN/DNS CHANGES. DO NOT REMOVE CNAME. DO NOT DELETE ASSETS.
+
+IMPORTANT: The world dataset is initially empty pending approved/legal data imports. This is intentional. There are no fabricated World Top 100 rankings.
+
+DATA ENTRY: edit world-rankings-data.csv only after source permissions, event/age verification, wind/timing checks. Run python3 validate_world_rankings.py world-rankings-data.csv locally first.
+
+Original Florida curated results remain in rankings-data.csv and can be accessed at florida-2026-sample.html (see direct link from world page); they are not incorrectly treated as verified global results.
