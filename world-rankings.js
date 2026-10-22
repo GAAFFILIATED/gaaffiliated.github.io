@@ -1,9 +1,9 @@
 'use strict';
 const EVENTS=['50m','55m','60m','100m','200m','300m','400m','600m','800m','1000m','1500m','1600m','Mile','2000m','3000m','3200m','5000m','10000m','80m Hurdles','100m Hurdles','110m Hurdles','200m Hurdles','300m Hurdles','400m Hurdles','2000m Steeplechase','3000m Steeplechase','High Jump','Pole Vault','Long Jump','Triple Jump','Shot Put','Discus','Hammer','Javelin','Turbo Javelin','Race Walk 800m','Race Walk 1500m','Race Walk 3000m','Race Walk 5000m','Pentathlon','Heptathlon','Decathlon'];
-const LIMIT_PER_AGE=25;
+const INITIAL_LIMIT=10;
 const AGE_GROUPS=Array.from({length:12},(_,i)=>i+7);
 const $=id=>document.getElementById(id);
-$('age').add(new Option('All ages — Top 25 each','all'));
+$('age').add(new Option('All ages — Top 10 each','all'));
 for(const a of AGE_GROUPS)$('age').add(new Option(`Age ${a}`,String(a)));
 $('age').value='all';
 EVENTS.forEach(e=>$('event').add(new Option(e,e)));
@@ -23,10 +23,10 @@ function isEligible(r){
   return true;
 }
 function addCell(tr,text){const cell=document.createElement('td');cell.textContent=String(text);tr.appendChild(cell);return cell}
-function addGroupHeading(age,found,allAges){
+function addGroupHeading(age,found,allAges,limit){
   if(!allAges)return;
   const tr=document.createElement('tr');tr.className='group-heading';
-  const td=document.createElement('td');td.colSpan=7;td.textContent=`AGE ${age}  ·  ${found} of 25 spots populated`;
+  const td=document.createElement('td');td.colSpan=7;td.textContent=`AGE ${age}  ·  ${found} of ${limit} spots populated`;
   tr.appendChild(td);$('rows').appendChild(tr);
 }
 function addResult(r,rank){
@@ -43,7 +43,7 @@ function addResult(r,rank){
 }
 function render(){
   const mode=$('mode').value, gender=$('gender').value, ageChoice=$('age').value,
-    event=$('event').value,country=$('country').value.toLowerCase().trim(),venue=$('venue').value;
+    event=$('event').value,country=$('country').value.toLowerCase().trim(),venue=$('venue').value,limit=Number($('limit').value)||INITIAL_LIMIT;
   const ages=ageChoice==='all'?AGE_GROUPS:[Number(ageChoice)];
   const allAges=ageChoice==='all';
   const resultPool=records.filter(r=>isEligible(r)&&r.gender===gender&&r.event===event&&
@@ -62,16 +62,21 @@ function render(){
       const key=r.athlete.trim().toLocaleLowerCase()+'|'+r.country.toLowerCase();
       if(used.has(key))continue;
       used.add(key);top.push(r);
-      if(top.length===LIMIT_PER_AGE)break;
+      if(top.length===limit)break;
     }
-    addGroupHeading(age,top.length,allAges);
+    addGroupHeading(age,top.length,allAges,limit);
     if(top.length){populated++;total+=top.length;top.forEach((r,index)=>addResult(r,index+1));}
     else if(allAges){const tr=document.createElement('tr');tr.className='empty-group';const td=document.createElement('td');td.colSpan=7;td.textContent='No verified performances imported for this age, event and filter selection.';tr.appendChild(td);$('rows').appendChild(tr)}
   }
-  $('count').textContent=allAges?`${total} athletes shown · ${populated} of 12 ages have data · max 25 per age`:`${total} of 25 spots populated · Age ${ageChoice}`;
+  $('count').textContent=allAges?`${total} athletes shown · ${populated} of 12 ages have data · max ${limit} per age`:`${total} of ${limit} spots populated · Age ${ageChoice}`;
   if(!total&&!allAges){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=7;td.textContent=hasLoaded?'No verified performances have been imported for this selection. This does not mean there are no eligible athletes worldwide.':'Could not load results CSV. Check that world-rankings-data.csv is beside this page.';tr.appendChild(td);$('rows').appendChild(tr)}
 }
-['mode','gender','age','event','country','venue'].forEach(id=>$(id).addEventListener(id==='country'?'input':'change',render));
+['mode','gender','age','event','country','venue','limit'].forEach(id=>$(id).addEventListener(id==='country'?'input':'change',render));
 fetch('world-rankings-data.csv',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(`Dataset HTTP ${r.status}`);return r.text()})
-.then(t=>{records=parseCSV(t);hasLoaded=true;const valid=records.filter(isEligible);$('stat-marks').textContent=valid.length.toLocaleString();$('stat-countries').textContent=new Set(valid.map(r=>r.country)).size;$('stat-events').textContent=new Set(valid.map(r=>r.event)).size;$('updated').textContent='2026 season + imported historical results';render()})
+.then(t=>{records=parseCSV(t);hasLoaded=true;const valid=records.filter(isEligible);$('stat-marks').textContent=valid.length.toLocaleString();$('stat-countries').textContent=new Set(valid.map(r=>r.country)).size;$('stat-events').textContent=new Set(valid.map(r=>r.event)).size;$('updated').textContent='Restored original 262 rows plus 3 source-confirmed Emeri Cotton finals';render()})
 .catch(err=>{$('stat-marks').textContent='—';$('stat-countries').textContent='—';$('stat-events').textContent='—';$('updated').textContent='Dataset unavailable';console.error('Rankings error:',err);render()});
+
+// Athlete spotlight selectors route to the appropriate Top 10 event and age.
+document.querySelectorAll('.emeri-jump').forEach(link=>link.addEventListener('click',()=>{
+  $('gender').value=link.dataset.gender; $('age').value=link.dataset.age; $('event').value=link.dataset.event; $('mode').value=link.dataset.mode; $('country').value=''; $('limit').value='10'; render();
+}));

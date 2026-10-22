@@ -1,31 +1,21 @@
-GA AFFILIATED WEBSITE — COMPLETE MAIN FOLDER
+GA AFFILIATED | RESTORED WORLD TOP 100 / TOP 10 AGE GROUPS
 
-Website pages remain SEPARATE, with all source files organized into ONE main folder.
+This update restores the original 262 source-linked entries from the prior GA international Top 100 sheet.
+Three additional officially published Emeri Cotton 2025/2026 FINAL results have been appended, giving 265 total records.
+The existing 2025 Emeri 200m 28.42 final and 2026 100m 13.56 / 400m 1:03.32 remain unchanged.
+2026 200m 27.36 was a SEMIFINAL record, shown in Emeri's spotlight, not mislabeled as a final. The 200m FINAL was 27.63.
 
-PAGES IN THIS FOLDER
-- index.html (homepage)
-- ambassadors.html (12 ambassador profiles and results)
-- track-top-100.html (curated track ranking results)
-- world-top-100.html (separate international rankings)
-- shop.html (store page)
-- order-success.html and admin-orders.html
+FILES:
+ world-top-100.html
+ world-rankings.js
+ world-rankings.css
+ world-rankings-data.csv
+ assets/ga-neon-header.jpg
 
-SHARED FILES
-- assets/ga-official-neon-logo.jpg (your newly supplied GA logo)
-- assets/favicon-ga.png (site browser icon)
-- assets/ambassadors/ (athlete portraits)
-- assets/products/ (store images)
-- assets/meet/ (meet imagery)
-- CSS, JavaScript, and CSV ranking data files in folder root
+UPLOAD TO GITHUB:
+ Upload the four root files to the root of the repository; add assets/ga-neon-header.jpg to the EXISTING assets folder (do not replace the assets folder). Commit to main. Do not upload the enclosing folder as a nested directory.
 
-GITHUB PAGES DEPLOYMENT
-1. Unzip this package.
-2. Open GA_Affiliated_Website.
-3. Upload the CONTENTS of this folder (not the enclosing GA_Affiliated_Website
-   folder itself) to the ROOT of your gaaffiliated.github.io GitHub repository.
-4. Keep the assets/ folders and CNAME file. Replace matching files.
-5. Commit changes to the main branch and wait for GitHub Pages to deploy.
+The homepage, ambassador roster, separate track-top-100.html, store, CNAME and other existing files are NOT included or modified.
 
-NOTE: This site bundle has not been published to your live website.
-Any Stripe/Firebase payment or order systems still require independent
-production configuration and validation.
+IMPORTANT DATA SCOPE:
+ 'Top 10' and 'Top 100' show ranks within this source-linked partial spreadsheet, not independently certified worldwide standings. Missing ages/events display only results present. Each entry retains the original source link.

@@ -1,4 +1,4 @@
-﻿athlete,country,gender,age,event,mark,sort_value,date,meet,source_url,venue,status,wind,timing,implement_spec,age_verification
+athlete,country,gender,age,event,mark,sort_value,date,meet,source_url,venue,status,wind,timing,implement_spec,age_verification
 Emeri Cotton,USA,F,8,100m,13.56,13.560,2026-08-08,2026 AAU Junior Olympic Games,https://image.aausports.org/sports/athletics/results/2026/jogames/Day8.htm,outdoor,verified,-1.2,FAT,,AAU result birth-year field
 Skylar Williams,USA,F,8,100m,13.85,13.850,2026-08-08,2026 AAU Junior Olympic Games,https://image.aausports.org/sports/athletics/results/2026/jogames/Day8.htm,outdoor,verified,-1.2,FAT,,AAU result birth-year field
 Micah Staton,USA,F,8,100m,13.88,13.880,2026-08-08,2026 AAU Junior Olympic Games,https://image.aausports.org/sports/athletics/results/2026/jogames/Day8.htm,outdoor,verified,-1.2,FAT,,AAU result birth-year field
@@ -261,3 +261,6 @@ Fleur Hofmijster,NED,F,17,1500m,4:41.22,281.220,2026-05-16,2026 Next Generation 
 Dicte Bundgaard,DEN,F,17,1500m,4:50.91,290.910,2026-05-16,2026 Next Generation Athletics,https://worldathletics.org/competition/calendar-results/results/7234842,outdoor,verified,,FAT,,World Athletics published date of birth
 Lynn Holtmann,GER,F,16,1500m,4:49.85,289.850,2026-05-16,2026 Next Generation Athletics,https://worldathletics.org/competition/calendar-results/results/7234842,outdoor,verified,,FAT,,World Athletics published date of birth
 Fleur Borra,NED,F,14,1500m,4:54.12,294.120,2026-05-16,2026 Next Generation Athletics,https://worldathletics.org/competition/calendar-results/results/7234842,outdoor,verified,,FAT,,World Athletics published date of birth
+Emeri Cotton,USA,F,8,200m,27.63,27.630,2026-08-07,2026 AAU Junior Olympic Games — Girls 8U 200m FINAL (Gold),https://image.aausports.org/sports/athletics/results/2026/jogames/Day7-Hometown.htm,outdoor,verified,+1.0,FAT,,AAU results year of birth 2018
+Emeri Cotton,USA,F,7,100m,13.93,13.930,2025-08-02,2025 AAU Junior Olympic Games — Girls 8U 100m FINAL (Gold),https://www.milesplit.com/meets/698724-aau-junior-olympic-games-2025/results/1193722/raw,outdoor,verified,+1.1,FAT,,AAU results year of birth 2018
+Emeri Cotton,USA,F,7,400m,1:04.33,64.330,2025-08-02,2025 AAU Junior Olympic Games — Girls 8U 400m FINAL (Gold),https://www.milesplit.com/meets/698724-aau-junior-olympic-games-2025/results/1194005/raw,outdoor,verified,,FAT,,AAU results year of birth 2018
