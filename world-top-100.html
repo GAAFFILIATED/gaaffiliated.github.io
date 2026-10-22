@@ -5,38 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080b12">
   <meta name="description" content="GA Affiliated independent youth athletics leaderboard — verified performances from official 2026 and historical international meet results for ages 7–18.">
-  <title>GA Affiliated | International Top 100 · Top 25 By Age</title>
-  <link rel="stylesheet" href="world-rankings.css">
-<link rel="icon" type="image/png" href="assets/favicon-ga.png"></head>
+  <title>GA Affiliated | International Top 100 · Top 10 By Age</title>
+  <link rel="stylesheet" href="world-rankings.css?v=2">
+</head>
 <body>
-<header class="site-header"><a class="home" href="ambassadors.html">← GA AMBASSADORS</a><strong>WORLD TOP 100</strong><span>TOP 25 BY AGE · GLOBAL RESULTS</span></header>
+<header class="site-header"><a class="home" href="index.html">← GA AFFILIATED HOME</a><strong>WORLD TOP 100</strong><a class="home" href="ambassadors.html">AMBASSADORS ↗</a></header>
 <main>
   <section class="rankings-hero" aria-labelledby="rankings-title">
-    <img class="rankings-hero-logo" src="assets/ga-neon-header.jpg" alt="GA TOP 100 official GA Affiliated neon logo" width="1536" height="614" decoding="async" fetchpriority="high">
+    <img class="rankings-hero-logo" src="assets/ga-neon-header.jpg" alt="GA Affiliated neon blue and purple logo" width="1536" height="614" decoding="async" fetchpriority="high">
     <div class="rankings-hero-copy">
       <div class="eyebrow">GA AFFILIATED · VERIFIED GLOBAL ATHLETICS</div>
-      <h1 id="rankings-title">WORLD <em>TOP 100</em> <span class="age-by-age">TOP 25 BY AGE</span></h1>
-      <p class="hero-subtitle">International athlete results · 2026 season + available history</p>
+      <h1 id="rankings-title">WORLD <em>TOP 100</em> <span class="age-by-age">TOP 10 BY AGE</span></h1>
+      <p class="hero-subtitle">Previously compiled international results spreadsheet · 2026 + 2025</p>
     </div>
   </section>
-  <p class="intro">Explore the Top 25 published performances currently imported at each age, 7–18, for boys and girls. Select an event and season, and view one age or all twelve age groups together.</p>
-  <div class="integrity"><strong>Independent rankings — coverage still growing.</strong> Positions are ranks <em>within the records currently imported</em>, not officially certified world rankings. "All-time" includes the historical results loaded so far, not every result in history.</div>
-  <div class="statistics" aria-label="Database coverage"><div><b id="stat-marks">—</b><small>Verified results</small></div><div><b id="stat-countries">—</b><small>Countries</small></div><div><b id="stat-events">—</b><small>Events loaded</small></div><div><b>7–18</b><small>Season-year ages</small></div></div>
+  <section class="featured-emeri" aria-label="Emeri Cotton verified results">
+  <div class="featured-copy">
+    <span class="eyebrow">FEATURED VERIFIED ATHLETE · THE COTTON CLUB POSSE</span>
+    <h2>EMERI <em>COTTON</em></h2>
+    <p>2026 AAU Junior Olympic Games · Girls 8U · Three national gold medals</p>
+    <div class="feature-marks"><a href="#rankings-table" class="emeri-jump" data-event="100m" data-age="8" data-gender="F" data-mode="season"><strong>13.56s</strong><small>100m · Final gold</small></a><a href="#rankings-table" class="emeri-jump" data-event="200m" data-age="8" data-gender="F" data-mode="season"><strong>27.63s</strong><small>200m · Final gold</small></a><a href="#rankings-table" class="emeri-jump" data-event="400m" data-age="8" data-gender="F" data-mode="season"><strong>1:03.32</strong><small>400m · Final gold</small></a></div>
+    <p class="feature-note">200m championship record: <strong>27.36s in the semifinal</strong> (not the final). <a href="https://image.aausports.org/sports/athletics/results/2026/jogames/Day7-Hometown.htm" target="_blank" rel="noopener noreferrer">Check official AAU result ↗</a>. In 2025, Emeri also won the Girls 8U 100m, 200m, and 400m at age 7; those records appear in the 2025/All Available Years view.</p>
+  </div>
+</section>
+  <p class="intro">Explore the Top 10 published performances currently imported at each age, 7–18, for boys and girls. Select an event and season, and view one age or all twelve age groups together.</p>
+  <div class="integrity"><strong>GA curated results — coverage still growing.</strong> Positions are ranks <em>within this source-linked spreadsheet</em>, not official world or national rankings. The historical view includes the 2025 and 2026 records loaded so far, not every historical result.</div>
+  <div class="statistics" aria-label="Database coverage"><div><b id="stat-marks">—</b><small>Published marks</small></div><div><b id="stat-countries">—</b><small>Countries</small></div><div><b id="stat-events">—</b><small>Events loaded</small></div><div><b>7–18</b><small>Season-year ages</small></div></div>
   <section class="filters" aria-label="Rankings filters">
-    <label>Ranking<select id="mode"><option value="season">2026 Season</option><option value="alltime">All-time (available records)</option></select></label>
+    <label>Season<select id="mode"><option value="season">2026 season</option><option value="alltime">2025 + 2026 (uploaded records)</option></select></label>
+    <label>Show per age<select id="limit"><option value="10">Top 10 (default)</option><option value="100">Up to Top 100</option></select></label>
     <label>Division<select id="gender"><option value="F">Girls</option><option value="M">Boys</option></select></label>
     <label>Age group<select id="age"></select></label>
     <label>Event<select id="event"></select></label>
     <label>Country<input id="country" placeholder="All countries / USA / JPN" autocomplete="off"></label>
     <label>Venue<select id="venue"><option value="all">Indoor + Outdoor</option><option value="outdoor">Outdoor</option><option value="indoor">Indoor</option></select></label>
   </section>
-  <div class="bar"><span id="count" role="status" aria-live="polite">Loading verified results…</span><span id="updated"></span></div>
-  <div class="table-wrap"><table><thead><tr><th>Rank*</th><th>Athlete</th><th>Nation</th><th>Mark</th><th>Wind</th><th>Date</th><th>Official result</th></tr></thead><tbody id="rows"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>
-  <p class="notice">*Ranks apply only to this partial database. Up to 25 unique athletes per age, division, event and selected period. Ranking numbers restart at #1 for each age. The All Ages view shows twelve separate groups. Country filtering creates a subset ranking, not a global placement. Missing results do not imply that absent athletes or countries are slower. Wind and implement specifications are displayed when supplied by the original result. Categories with no loaded results stay empty. Individual birth dates are never shown.</p>
-  <section class="how"><h2>How rankings are validated</h2><p>Every entry includes the published meet result, competition date, athlete name, country, event and age category. GA assigns ages by <strong>calendar year of the performance minus athlete birth year</strong>. Wind greater than +2.0 m/s is excluded for applicable events. If wind was not published, it is shown as unreported rather than assumed legal. Electronic timing, distance, and event specifications must be checked during import. Separate throw weights or hurdle heights must not be ranked together. More countries, meets, events and years will be added as verifiable sources and redistribution permissions allow.</p></section>
+  <div class="bar"><span id="count" role="status" aria-live="polite">Loading published results…</span><span id="updated"></span></div>
+  <div class="table-wrap" id="rankings-table"><table><thead><tr><th>Rank*</th><th>Athlete</th><th>Nation</th><th>Mark</th><th>Wind</th><th>Date</th><th>Official result</th></tr></thead><tbody id="rows"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>
+  <p class="notice">*Ranks apply only to this partial database. Top 10 by default, expandable to 100, per age, division, event, and selected period. Ranking numbers restart at #1 for each age. The All Ages view shows twelve separate groups. Country filtering creates a subset ranking, not a global placement. Missing results do not imply that absent athletes or countries are slower. Wind and implement specifications are displayed when supplied by the original result. Categories with no loaded results stay empty. Individual birth dates are never shown.</p>
+  <section class="how"><h2>How rankings are validated</h2><p>Every retained entry provides a published meet-result URL, competition date, athlete name, country, event and age category. Results are source-linked but the compilation is not a complete global results audit. GA assigns ages by <strong>calendar year of the performance minus athlete birth year</strong>. Wind greater than +2.0 m/s is excluded for applicable events. If wind was not published, it is shown as unreported rather than assumed legal. Electronic timing, distance, and event specifications must be checked during import. Separate throw weights or hurdle heights must not be ranked together. More countries, meets, events and years will be added as verifiable sources and redistribution permissions allow.</p></section>
   <section class="how"><h2>Submit an official performance</h2><p>To propose an addition or correction, email <a href="mailto:ga.affiliated@gmail.com?subject=GA%20World%20Top%2025%20Result%20Submission">ga.affiliated@gmail.com</a> with the public official result URL, athlete name, birth <em>year</em>, event, mark, competition date and nation. Do not submit private documents or full dates of birth for minors.</p></section>
 </main>
 <footer>GA AFFILIATED · GLOBAL YOUTH ATHLETICS · <a href="ambassadors.html">MEET THE AMBASSADORS</a></footer>
-<script src="world-rankings.js" defer></script>
+<script src="world-rankings.js?v=2" defer></script>
 </body>
 </html>
